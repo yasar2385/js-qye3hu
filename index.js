@@ -74,8 +74,8 @@ window.IMPACT = {
   USER_ENV_INFO: {
     screenResolution: '1366 x 768',
     browser: 'Safari',
-    browserVersion: '14.1.2',
-    browserMajorVersion: 14,
+    browserVersion: '108.1.2',
+    browserMajorVersion: 108,
     mobile: false,
     os: 'Windows',
     osVersion: '10_13_6',
@@ -99,6 +99,23 @@ if (validate_json && validate_json.min > _[fetch]) {
   console.log(_[fetch]);
 }
 console.log('14.1' > '14.1.2');
-console.log('14.1'.localeCompare('14.1.2'));
-console.log('14.1'.localeCompare('14.1'));
-console.log('14.1'.localeCompare('13.1.2'));
+console.log('14'.localeCompare('14.1.2'));
+console.log('14'.localeCompare('14.1'));
+console.log('14'.localeCompare('13.1.2'));
+var split = _.browserVersion.split('.');
+console.log(split[0]);
+
+console.log('80'.localeCompare('108.0.1462.54'));
+let currentVersion = validate_json.min.toString();
+console.log('===>' + currentVersion.split('.')[0].length);
+console.log('===>' + _.browserMajorVersion.toString().length);
+console.log(
+  currentVersion.split('.')[0].length - _.browserMajorVersion.toString().length
+);
+console.log('===>');
+while (
+  validate_json.min.toString().split('.')[0].length -
+  _.browserMajorVersion.toString().length
+)
+  currentVersion = '0' + currentVersion;
+console.log(currentVersion);
