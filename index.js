@@ -103,19 +103,14 @@ console.log('14'.localeCompare('14.1.2'));
 console.log('14'.localeCompare('14.1'));
 console.log('14'.localeCompare('13.1.2'));
 var split = _.browserVersion.split('.');
-console.log(split[0]);
-
-console.log('80'.localeCompare('108.0.1462.54'));
 let currentVersion = validate_json.min.toString();
-console.log('===>' + currentVersion.split('.')[0].length);
-console.log('===>' + _.browserMajorVersion.toString().length);
-console.log(
-  currentVersion.split('.')[0].length - _.browserMajorVersion.toString().length
-);
+let MajorVersionLengthDiff =
+  _.browserMajorVersion.toString().length - currentVersion.split('.')[0].length;
 console.log('===>');
-while (
-  validate_json.min.toString().split('.')[0].length -
-  _.browserMajorVersion.toString().length
-)
+console.log(MajorVersionLengthDiff);
+for (let step = 0; step < MajorVersionLengthDiff; step++) {
   currentVersion = '0' + currentVersion;
+}
 console.log(currentVersion);
+var IsLowerVersion = currentVersion.localeCompare(_.browserVersion);
+console.log(IsLowerVersion);
