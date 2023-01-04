@@ -74,8 +74,8 @@ window.IMPACT = {
   USER_ENV_INFO: {
     screenResolution: '1366 x 768',
     browser: 'Safari',
-    browserVersion: '108.1.2',
-    browserMajorVersion: 108,
+    browserVersion: '12.1',
+    browserMajorVersion: 12,
     mobile: false,
     os: 'Windows',
     osVersion: '10_13_6',
@@ -106,9 +106,9 @@ var split = _.browserVersion.split('.');
 let currentVersion = validate_json.min.toString();
 let MajorVersionLengthDiff =
   _.browserMajorVersion.toString().length - currentVersion.split('.')[0].length;
-console.log('===>');
 console.log(MajorVersionLengthDiff);
 for (let step = 0; step < MajorVersionLengthDiff; step++) {
+  console.log('===>'+currentVersion);
   currentVersion = '0' + currentVersion;
 }
 console.log(currentVersion);
